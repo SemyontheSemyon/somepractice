@@ -10,6 +10,10 @@ public class Main {
             statement.execute("INSERT INTO Person VALUES (1, 'Robin')");
             ResultSet resultSet = statement.executeQuery("SELECT * FROM Person");
             while(resultSet.next()) System.out.println(resultSet.getString("name"));
+            resultSet.close();
+            statement.close();
+            connection.close();
+            System.out.println(connection.isClosed());
 
         } catch (Exception e) {
             System.out.println("lul");
